@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pirates DXB - Cyberpunk Software House & Cybersecurity Firm</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="logo-container">
+                <img src="LOGO.jpeg" alt="The Pirates DXB Logo" class="loading-logo">
+            </div>
+            <div class="loading-text">
+                <span class="glitch" data-text="INITIALIZING">INITIALIZING</span>
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="LOGO.jpeg" alt="The Pirates DXB" class="logo">
+                <span class="logo-text">THE PIRATES DXB</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">HOME</a>
+                <a href="#about" class="nav-link">ABOUT</a>
+                <a href="#services" class="nav-link">SERVICES</a>
+                <a href="#portfolio" class="nav-link">PORTFOLIO</a>
+                <a href="#team" class="nav-link">TEAM</a>
+                <a href="#contact" class="nav-link">CONTACT</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="grid-overlay"></div>
+            <div class="particles"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="glitch" data-text="THE PIRATES DXB">THE PIRATES DXB</span>
+                </h1>
+                <p class="hero-subtitle">CYBERPUNK SOFTWARE HOUSE & CYBERSECURITY FIRM</p>
+                <p class="hero-description">
+                    We are cybersecurity students turned digital pirates, sailing through the cyber seas of Dubai. 
+                    Specializing in cutting-edge software development and impenetrable security solutions.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('services')">
+                        <span>EXPLORE SERVICES</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('contact')">
+                        <span>JOIN THE CREW</span>
+                        <i class="fas fa-skull-crossbones"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-logo">
+                    <img src="LOGO.jpeg" alt="The Pirates DXB" class="hero-logo">
+                    <div class="logo-glow"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="glitch" data-text="ABOUT THE CREW">ABOUT THE CREW</span>
+                </h2>
+                <p class="section-subtitle">We are the digital pirates of Dubai</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>CYBERSECURITY STUDENTS</h3>
+                        <p>Fresh minds with cutting-edge knowledge in cybersecurity, ready to tackle the digital frontier.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>SOFTWARE HOUSE</h3>
+                        <p>Building innovative software solutions that push the boundaries of what's possible in the digital realm.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>CYBERSECURITY FIRM</h3>
+                        <p>Protecting digital assets with state-of-the-art security measures and ethical hacking expertise.</p>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="100">0</div>
+                        <div class="stat-label">PROJECTS COMPLETED</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="50">0</div>
+                        <div class="stat-label">HAPPY CLIENTS</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="24">0</div>
+                        <div class="stat-label">HOURS SUPPORT</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="99">0</div>
+                        <div class="stat-label">SECURITY SCORE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="glitch" data-text="OUR SERVICES">OUR SERVICES</span>
+                </h2>
+                <p class="section-subtitle">Digital solutions for the future</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>SOFTWARE DEVELOPMENT</h3>
+                    <p>Custom software solutions built with cutting-edge technologies and cyberpunk aesthetics.</p>
+                    <ul class="service-features">
+                        <li>Web Applications</li>
+                        <li>Mobile Apps</li>
+                        <li>Desktop Software</li>
+                        <li>API Development</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3>PENETRATION TESTING</h3>
+                    <p>Comprehensive security assessments to identify and fix vulnerabilities in your systems.</p>
+                    <ul class="service-features">
+                        <li>Web Application Testing</li>
+                        <li>Network Security</li>
+                        <li>Social Engineering</li>
+                        <li>Physical Security</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>CYBERSECURITY CONSULTING</h3>
+                    <p>Expert guidance on securing your digital infrastructure and protecting against threats.</p>
+                    <ul class="service-features">
+                        <li>Security Audits</li>
+                        <li>Incident Response</li>
+                        <li>Security Training</li>
+                        <li>Compliance</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h3>VULNERABILITY ASSESSMENT</h3>
+                    <p>Thorough analysis of your systems to identify potential security weaknesses.</p>
+                    <ul class="service-features">
+                        <li>Code Review</li>
+                        <li>Infrastructure Analysis</li>
+                        <li>Risk Assessment</li>
+                        <li>Remediation Plans</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>CLOUD SECURITY</h3>
+                    <p>Securing your cloud infrastructure with advanced security measures and monitoring.</p>
+                    <ul class="service-features">
+                        <li>AWS Security</li>
+                        <li>Azure Protection</li>
+                        <li>Cloud Monitoring</li>
+                        <li>Data Encryption</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI & MACHINE LEARNING</h3>
+                    <p>Intelligent solutions powered by artificial intelligence and machine learning algorithms.</p>
+                    <ul class="service-features">
+                        <li>Predictive Analytics</li>
+                        <li>Automation Systems</li>
+                        <li>AI Security</li>
+                        <li>Data Analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="glitch" data-text="OUR PORTFOLIO">OUR PORTFOLIO</span>
+                </h2>
+                <p class="section-subtitle">Showcasing our digital conquests</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3>CYBER SECURITY PLATFORM</h3>
+                            <p>Advanced threat detection and response system</p>
+                            <div class="portfolio-tech">
+                                <span>Python</span>
+                                <span>Machine Learning</span>
+                                <span>Cybersecurity</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3>CRYPTO TRADING BOT</h3>
+                            <p>Automated cryptocurrency trading with AI</p>
+                            <div class="portfolio-tech">
+                                <span>Python</span>
+                                <span>Blockchain</span>
+                                <span>AI/ML</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3>PENETRATION TESTING TOOL</h3>
+                            <p>Comprehensive security assessment framework</p>
+                            <div class="portfolio-tech">
+                                <span>Rust</span>
+                                <span>Cybersecurity</span>
+                                <span>Networking</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3>BLOCKCHAIN WALLET</h3>
+                            <p>Secure cryptocurrency wallet with advanced features</p>
+                            <div class="portfolio-tech">
+                                <span>React</span>
+                                <span>Blockchain</span>
+                                <span>Web3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3>NETWORK MONITORING</h3>
+                            <p>Real-time network security monitoring system</p>
+                            <div class="portfolio-tech">
+                                <span>Go</span>
+                                <span>Networking</span>
+                                <span>Monitoring</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3>AI CHATBOT</h3>
+                            <p>Intelligent customer support automation</p>
+                            <div class="portfolio-tech">
+                                <span>Python</span>
+                                <span>NLP</span>
+                                <span>Machine Learning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="glitch" data-text="MEET THE CREW">MEET THE CREW</span>
+                </h2>
+                <p class="section-subtitle">The digital pirates behind the code</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">
+                            <i class="fas fa-user-secret"></i>
+                        </div>
+                    </div>
+                    <h3>CAPTAIN</h3>
+                    <p class="member-role">Lead Cybersecurity Specialist</p>
+                    <p class="member-bio">Master of digital warfare and ethical hacking techniques.</p>
+                    <div class="member-skills">
+                        <span>Penetration Testing</span>
+                        <span>Network Security</span>
+                        <span>Incident Response</span>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    </div>
+                    <h3>NAVIGATOR</h3>
+                    <p class="member-role">Senior Software Engineer</p>
+                    <p class="member-bio">Architect of digital solutions and code wizard.</p>
+                    <div class="member-skills">
+                        <span>Full-Stack Development</span>
+                        <span>System Architecture</span>
+                        <span>DevOps</span>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                    <h3>QUARTERMASTER</h3>
+                    <p class="member-role">Security Operations Manager</p>
+                    <p class="member-bio">Guardian of digital assets and security protocols.</p>
+                    <div class="member-skills">
+                        <span>Security Operations</span>
+                        <span>Risk Management</span>
+                        <span>Compliance</span>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                    </div>
+                    <h3>SCRIBE</h3>
+                    <p class="member-role">AI & Machine Learning Engineer</p>
+                    <p class="member-bio">Craftsman of intelligent algorithms and data solutions.</p>
+                    <div class="member-skills">
+                        <span>Machine Learning</span>
+                        <span>Data Science</span>
+                        <span>AI Development</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="glitch" data-text="CONTACT US">CONTACT US</span>
+                </h2>
+                <p class="section-subtitle">Ready to join the digital revolution?</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>LOCATION</h3>
+                            <p>Dubai, United Arab Emirates</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>EMAIL</h3>
+                            <p>contact@thepiratesdxb.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>PHONE</h3>
+                            <p>+971 XX XXX XXXX</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>AVAILABILITY</h3>
+                            <p>24/7 Support Available</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">YOUR NAME</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">YOUR EMAIL</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" required>
+                            <label for="subject">SUBJECT</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" required></textarea>
+                            <label for="message">YOUR MESSAGE</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <span>SEND MESSAGE</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="LOGO.jpeg" alt="The Pirates DXB" class="footer-logo-img">
+                    <span class="footer-logo-text">THE PIRATES DXB</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">HOME</a>
+                    <a href="#about">ABOUT</a>
+                    <a href="#services">SERVICES</a>
+                    <a href="#portfolio">PORTFOLIO</a>
+                    <a href="#team">TEAM</a>
+                    <a href="#contact">CONTACT</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 The Pirates DXB. All rights reserved. | Built with <i class="fas fa-heart"></i> in Dubai</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
