@@ -148,6 +148,42 @@ Potential features for future updates:
 - [ ] Dark/Light theme toggle
 - [ ] Advanced animations and effects
 
+## 🌐 Deployment & GitHub Pages
+
+This website is configured to be deployed on GitHub Pages with a custom domain.
+
+### Setup Instructions
+
+1. **Push to GitHub**: Push this repository to GitHub
+2. **Enable GitHub Pages**:
+   - Go to your repository settings
+   - Navigate to "Pages" section
+   - Set source to "GitHub Actions"
+3. **Custom Domain Configuration**:
+   - The `CNAME` file contains your custom domain: `thepiratesdxb.software`
+   - Configure your DNS settings with your domain provider:
+     - Create a CNAME record pointing `thepiratesdxb.software` to `yourusername.github.io`
+     - Or create A records pointing to GitHub Pages IPs:
+       - `185.199.108.153`
+       - `185.199.109.153`
+       - `185.199.110.153`
+       - `185.199.111.153`
+4. **Automatic Deployment**: The GitHub Actions workflow will automatically deploy your site when you push to the main branch
+
+### DNS Configuration Example
+```
+Type: CNAME
+Name: @
+Value: yourusername.github.io
+
+Type: CNAME  
+Name: www
+Value: yourusername.github.io
+```
+
+### Live Site
+Once configured, your site will be available at: `https://thepiratesdxb.software`
+
 ## 📄 License
 
 This project is created for The Pirates DXB. All rights reserved.
@@ -160,4 +196,4 @@ This is a private project for The Pirates DXB. For inquiries about collaboration
 
 **Built with ❤️ in Dubai by The Pirates DXB**
 
-*"In the digital seas, we are the pirates who protect, not plunder."* 
+*"In the digital seas, we are the pirates who protect, not plunder."*
