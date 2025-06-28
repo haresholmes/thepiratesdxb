@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasty Link - Project Cost Breakdown | The Pirates DXB</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Professional styles for Tasty Link cost breakdown page */
+        .cost-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+
+        .cost-hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .cost-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #ffffff;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .cost-subtitle {
+            font-size: 1.5rem;
+            color: #e8f4fd;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .budget-display {
+            background: rgba(255, 255, 255, 0.95);
+            border: 3px solid #2a5298;
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .budget-amount {
+            font-family: 'Orbitron', monospace;
+            font-size: 4rem;
+            font-weight: 900;
+            color: #2a5298;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+        }
+
+        .budget-label {
+            font-size: 1.2rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+        }
+
+        .cost-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .cost-card {
+            background: #ffffff;
+            border: 2px solid #e0e6ed;
+            border-radius: 15px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .cost-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(42, 82, 152, 0.15);
+            border-color: #2a5298;
+        }
+
+        .cost-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .cost-title-small {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2a5298;
+            text-transform: uppercase;
+        }
+
+        .cost-amount-small {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #28a745;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .cost-percentage {
+            background: #f8f9fa;
+            color: #2a5298;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid #2a5298;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        .cost-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .features-list li {
+            padding: 0.5rem 0;
+            color: #555;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .features-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .progress-section {
+            background: #ffffff;
+            border: 2px solid #e0e6ed;
+            border-radius: 15px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .progress-bar {
+            background: #f8f9fa;
+            border-radius: 10px;
+            height: 20px;
+            margin: 2rem 0;
+            overflow: hidden;
+            border: 1px solid #e0e6ed;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #2a5298, #1e3c72);
+            border-radius: 10px;
+            transition: width 2s ease;
+            position: relative;
+        }
+
+        .timeline {
+            margin-top: 3rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #ffffff;
+            border-radius: 15px;
+            border: 1px solid #e0e6ed;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(42, 82, 152, 0.15);
+            border-color: #2a5298;
+        }
+
+        .timeline-phase {
+            background: linear-gradient(135deg, #2a5298, #1e3c72);
+            color: #ffffff;
+            padding: 1rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 700;
+            margin-right: 2rem;
+            min-width: 120px;
+            text-align: center;
+            font-family: 'Orbitron', monospace;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .timeline-content h4 {
+            color: #2a5298;
+            margin-bottom: 0.5rem;
+            font-family: 'Orbitron', monospace;
+            text-transform: uppercase;
+        }
+
+        .timeline-content p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .requirements-section {
+            background: #ffffff;
+            border: 2px solid #e0e6ed;
+            border-radius: 15px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .requirement-card {
+            background: #f8f9fa;
+            border: 1px solid #e0e6ed;
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .requirement-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(42, 82, 152, 0.1);
+            border-color: #2a5298;
+        }
+
+        .requirement-card h4 {
+            color: #2a5298;
+            margin-bottom: 1rem;
+            font-family: 'Orbitron', monospace;
+            text-transform: uppercase;
+        }
+
+        .requirement-list {
+            list-style: none;
+        }
+
+        .requirement-list li {
+            color: #555;
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .requirement-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #2a5298;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .business-overview {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px solid #2a5298;
+            border-radius: 15px;
+            padding: 3rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .business-overview h3 {
+            color: #2a5298;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-family: 'Orbitron', monospace;
+            text-transform: uppercase;
+        }
+
+        .business-overview p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .cost-title {
+                font-size: 2.5rem;
+            }
+            
+            .cost-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .timeline-phase {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="logo-container">
+                <img src="LOGO.jpeg" alt="The Pirates DXB Logo" class="loading-logo">
+            </div>
+            <div class="loading-text">
+                <span class="glitch" data-text="ANALYZING COSTS">ANALYZING COSTS</span>
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="LOGO.jpeg" alt="The Pirates DXB" class="logo">
+                <span class="logo-text">THE PIRATES DXB</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">HOME</a>
+                <a href="index.html#about" class="nav-link">ABOUT</a>
+                <a href="index.html#services" class="nav-link">SERVICES</a>
+                <a href="index.html#portfolio" class="nav-link">PORTFOLIO</a>
+                <a href="index.html#team" class="nav-link">TEAM</a>
+                <a href="index.html#contact" class="nav-link">CONTACT</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cost Hero Section -->
+    <section class="cost-hero">
+        <div class="cost-hero-content">
+            <h1 class="cost-title">TASTY LINK</h1>
+            <p class="cost-subtitle">FOOD TRADING LLC - PROJECT COST BREAKDOWN</p>
+            
+            <div class="budget-display">
+                <div class="budget-amount">9,000 AED</div>
+                <div class="budget-label">TOTAL PROJECT BUDGET</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Overview Section -->
+    <section class="about">
+        <div class="container">
+            <div class="business-overview">
+                <h3>BUSINESS OVERVIEW</h3>
+                <p>
+                    Tasty Link Food Trading LLC is a professional wholesale food company specializing in fresh meat and poultry products. 
+                    We are developing a Business-to-Consumer mobile application to enable direct sales of wholesale fresh meat to consumers. 
+                    The platform will allow customers to browse available meat products, add items to cart, and place orders for delivery 
+                    to their saved addresses, with instant notifications for order fulfillment and delivery scheduling.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost Breakdown Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="glitch" data-text="COST DISTRIBUTION">COST DISTRIBUTION</span>
+                </h2>
+                <p class="section-subtitle">Strategic allocation of resources for professional food wholesale platform</p>
+            </div>
+            
+            <div class="cost-grid">
+                <div class="cost-card">
+                    <div class="cost-header">
+                        <h3 class="cost-title-small">FRONTEND DEVELOPMENT</h3>
+                        <div class="cost-amount-small">2,700 AED</div>
+                    </div>
+                    <div class="cost-percentage">30%</div>
+                    <p class="cost-description">Professional user interface development for customers and wholesale meat ordering</p>
+                    <ul class="features-list">
+                        <li>Responsive web design for all devices</li>
+                        <li>User registration & login system</li>
+                        <li>Meat product browsing & search functionality</li>
+                        <li>Professional order placement system</li>
+                        <li>Secure payment integration</li>
+                        <li>Real-time order tracking</li>
+                    </ul>
+                </div>
+
+                <div class="cost-card">
+                    <div class="cost-header">
+                        <h3 class="cost-title-small">BACKEND DEVELOPMENT</h3>
+                        <div class="cost-amount-small">2,250 AED</div>
+                    </div>
+                    <div class="cost-percentage">25%</div>
+                    <p class="cost-description">Robust server-side logic and secure database management for wholesale operations</p>
+                    <ul class="features-list">
+                        <li>Secure API development</li>
+                        <li>Database design & optimization</li>
+                        <li>User authentication & authorization</li>
+                        <li>Order management system</li>
+                        <li>Payment processing integration</li>
+                        <li>Push notification service</li>
+                    </ul>
+                </div>
+
+                <div class="cost-card">
+                    <div class="cost-header">
+                        <h3 class="cost-title-small">MOBILE APP DEVELOPMENT</h3>
+                        <div class="cost-amount-small">1,800 AED</div>
+                    </div>
+                    <div class="cost-percentage">20%</div>
+                    <p class="cost-description">Cross-platform mobile application for iOS & Android meat ordering</p>
+                    <ul class="features-list">
+                        <li>iOS & Android compatibility</li>
+                        <li>Push notifications system</li>
+                        <li>GPS tracking & location services</li>
+                        <li>Offline functionality</li>
+                        <li>App store deployment</li>
+                        <li>Professional UI/UX design</li>
+                    </ul>
+                </div>
+
+                <div class="cost-card">
+                    <div class="cost-header">
+                        <h3 class="cost-title-small">TESTING & QA</h3>
+                        <div class="cost-amount-small">900 AED</div>
+                    </div>
+                    <div class="cost-percentage">10%</div>
+                    <p class="cost-description">Comprehensive testing and quality assurance for reliable wholesale operations</p>
+                    <ul class="features-list">
+                        <li>Unit testing & integration testing</li>
+                        <li>User acceptance testing</li>
+                        <li>Performance optimization</li>
+                        <li>Security testing & penetration testing</li>
+                        <li>Bug fixes & optimization</li>
+                        <li>Cross-browser compatibility</li>
+                    </ul>
+                </div>
+
+                <div class="cost-card">
+                    <div class="cost-header">
+                        <h3 class="cost-title-small">UI/UX DESIGN</h3>
+                        <div class="cost-amount-small">675 AED</div>
+                    </div>
+                    <div class="cost-percentage">7.5%</div>
+                    <p class="cost-description">Professional user experience and interface design for wholesale meat platform</p>
+                    <ul class="features-list">
+                        <li>Wireframing & prototyping</li>
+                        <li>Professional visual design system</li>
+                        <li>User journey mapping</li>
+                        <li>Brand identity & logo design</li>
+                        <li>Design assets & components</li>
+                        <li>Responsive design guidelines</li>
+                    </ul>
+                </div>
+
+                <div class="cost-card">
+                    <div class="cost-header">
+                        <h3 class="cost-title-small">PROJECT MANAGEMENT</h3>
+                        <div class="cost-amount-small">675 AED</div>
+                    </div>
+                    <div class="cost-percentage">7.5%</div>
+                    <p class="cost-description">Professional project coordination and delivery management</p>
+                    <ul class="features-list">
+                        <li>Project planning & scheduling</li>
+                        <li>Team coordination & communication</li>
+                        <li>Progress tracking & reporting</li>
+                        <li>Client communication & updates</li>
+                        <li>Documentation & handover</li>
+                        <li>Risk management & mitigation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section class="about">
+        <div class="container">
+            <div class="requirements-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="glitch" data-text="PROJECT REQUIREMENTS">PROJECT REQUIREMENTS</span>
+                    </h2>
+                    <p class="section-subtitle">Tasty Link Food Trading LLC - Business to Consumer Mobile Application</p>
+                </div>
+                
+                <div class="requirements-grid">
+                    <div class="requirement-card">
+                        <h4>CUSTOMER MODULE</h4>
+                        <ul class="requirement-list">
+                            <li>User Registration & Login</li>
+                            <li>User Profile Management</li>
+                            <li>Meat Product Browsing & Search</li>
+                            <li>Add to Cart Functionality</li>
+                            <li>Checkout Process</li>
+                            <li>Online Payment Integration</li>
+                            <li>Order History</li>
+                            <li>Push Notifications</li>
+                        </ul>
+                    </div>
+
+                    <div class="requirement-card">
+                        <h4>ADMIN MODULE</h4>
+                        <ul class="requirement-list">
+                            <li>Admin Login System</li>
+                            <li>Order Management</li>
+                            <li>Meat Product Management</li>
+                            <li>Customer Management</li>
+                            <li>Notification Management</li>
+                            <li>Dashboard Analytics</li>
+                            <li>Inventory Tracking</li>
+                            <li>Delivery Scheduling</li>
+                        </ul>
+                    </div>
+
+                    <div class="requirement-card">
+                        <h4>BACKEND MODULE</h4>
+                        <ul class="requirement-list">
+                            <li>Secure Database Design</li>
+                            <li>RESTful API Development</li>
+                            <li>Payment Gateway Integration</li>
+                            <li>Push Notification Service</li>
+                            <li>File Upload & Management</li>
+                            <li>Data Backup & Recovery</li>
+                            <li>Security & Authentication</li>
+                            <li>Performance Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Section -->
+    <section class="services">
+        <div class="container">
+            <div class="progress-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="glitch" data-text="PROJECT TIMELINE">PROJECT TIMELINE</span>
+                    </h2>
+                    <p class="section-subtitle">12-week development cycle for professional wholesale platform</p>
+                </div>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%;"></div>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-phase">PHASE 1</div>
+                        <div class="timeline-content">
+                            <h4>PLANNING & DESIGN</h4>
+                            <p>Week 1-2: Requirements analysis, UI/UX design, and project setup</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-phase">PHASE 2</div>
+                        <div class="timeline-content">
+                            <h4>BACKEND DEVELOPMENT</h4>
+                            <p>Week 3-6: API development, database setup, and core functionality</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-phase">PHASE 3</div>
+                        <div class="timeline-content">
+                            <h4>FRONTEND DEVELOPMENT</h4>
+                            <p>Week 4-8: Web interface development and user experience implementation</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-phase">PHASE 4</div>
+                        <div class="timeline-content">
+                            <h4>MOBILE APP</h4>
+                            <p>Week 6-10: Cross-platform mobile application development</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-phase">PHASE 5</div>
+                        <div class="timeline-content">
+                            <h4>TESTING & LAUNCH</h4>
+                            <p>Week 9-12: Quality assurance, bug fixes, and platform deployment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="LOGO.jpeg" alt="The Pirates DXB" class="footer-logo-img">
+                <span class="footer-logo-text">THE PIRATES DXB</span>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">HOME</a>
+                <a href="index.html#about">ABOUT</a>
+                <a href="index.html#services">SERVICES</a>
+                <a href="index.html#portfolio">PORTFOLIO</a>
+                <a href="index.html#team">TEAM</a>
+                <a href="index.html#contact">CONTACT</a>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 The Pirates DXB. All rights reserved. | Tasty Link Food Trading LLC Project Cost Breakdown</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Additional JavaScript for cost page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate progress bars
+            const progressBars = document.querySelectorAll('.progress-fill');
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 1000);
+            });
+
+            // Animate cost cards on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.cost-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(50px)';
+                card.style.transition = 'all 0.6s ease';
+                observer.observe(card);
+            });
+
+            // Animate timeline items
+            document.querySelectorAll('.timeline-item').forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-50px)';
+                item.style.transition = 'all 0.6s ease';
+                
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateX(0)';
+                }, 500 + (index * 200));
+            });
+        });
+    </script>
+</body>
+</html> 
